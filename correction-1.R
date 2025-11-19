@@ -90,3 +90,12 @@ pre_4_2026 <- droite$coefficients[2]*120+droite$coefficients[1]-data_2$ceof_si_c
 cat("prevision pour le trimestre 3 de l'année 2000:   =>", pre_3_2000)
 cat("prevision pour le trimestre 4 de l'année 2026:==>>", pre_4_2026)
 ############
+# Bonus
+plot(data_2$indices, col='red', type='o',
+     xlab="Années", ylab="Indice", 
+     main="chronogramme", lwd=2)
+lines(data_2$MM_2, col="blue",lwd=2)
+abline(a=droite$coefficients[1], b=droite$coefficients[2], col="green",lwd=3)
+grid(10)
+legend("topleft", legend=c("chronogramme","MM_2", "droite ajustement"),
+       col=c("red", "blue","green"), lwd=2)
